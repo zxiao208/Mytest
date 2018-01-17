@@ -31,7 +31,8 @@ dependencies {
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'io.reactivex.rxjava2:rxjava:2.1.2'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'//配合rxjava
+    compile 'com.squareup.okhttp3:logging-interceptor:3.8.1'//拦截器
     compile 'com.amitshekhar.android:rx2-android-networking:1.0.0'
     compile 'com.jakewharton:butterknife:8.6.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'

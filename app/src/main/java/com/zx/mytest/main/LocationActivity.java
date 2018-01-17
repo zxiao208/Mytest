@@ -122,7 +122,6 @@ public class LocationActivity extends AppCompatActivity implements View.OnClickL
             LocationUtil.addLocationListener(context, LocationManager.GPS_PROVIDER, new LocationUtil.ILocationListener() {
                 @Override
                 public void onSuccessLocation(Location location) {
-                    Log.i("zhaoxiao","1111");
                     if (location != null) {
                         Toast.makeText(LocationActivity.this, "gps onSuccessLocation location:  lat==" + location.getLatitude() + "     lng==" + location.getLongitude(), Toast.LENGTH_SHORT).show();
 
