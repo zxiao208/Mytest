@@ -8,12 +8,10 @@ import com.zx.mytest.base.BaseActivity;
 
 public class MainActivity extends BaseActivity {
 
-
     @Override
     protected int getContentViewLayoutID() {
         return R.layout.activity_main;
     }
-
     @Override
     protected void initView(Bundle savedInstanceState) {
         

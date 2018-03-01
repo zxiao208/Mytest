@@ -97,9 +97,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected int setStatusBarColor() {
         return R.color.blue;
     }
-
     private Toast mToast;
-
     protected void showToast(String desc){
         if (mToast == null){
             mToast = Toast.makeText(this.getApplicationContext(),desc,Toast.LENGTH_SHORT);

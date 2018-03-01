@@ -17,11 +17,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".main.LocationActivity">
+        <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--定位-->
+        <activity android:name=".main.LocationActivity">
+            <intent-filter>
+                <action android:name=".main.Locationaction"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <!--乞丐版mvpdemo-->
+        <activity android:name=".main.MvpActivity">
+            <intent-filter>
+                <action android:name=".main.Mvpaction"/>
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
     </application>
