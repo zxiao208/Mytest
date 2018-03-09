@@ -34,4 +34,5 @@ public class MvpModel {
             }
         },2000);
     }
+
 }

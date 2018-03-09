@@ -5,24 +5,44 @@
     android:orientation="vertical"
     >
     <Button
+        android:id="@+id/main_openprot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开手机5555端口"
+        />
+    <Button
+        android:id="@+id/main_mvp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="乞丐版MVP"
-        android:onClick="mvpdemo"
+
+        />
+    <Button
+        android:id="@+id/mian_qijian_mvp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="旗舰版MVP"
+
         />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1"
-        android:onClick="getDataForFailure"
+        android:text="Okhttp3"
         />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="2"
-        android:onClick="getDataForError"
+        android:text="Retrofit"
         />
-
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Utils"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Retrofit"
+        />
 
 </LinearLayout>

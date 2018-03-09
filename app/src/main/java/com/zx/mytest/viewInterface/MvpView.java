@@ -1,10 +1,12 @@
 package com.zx.mytest.viewInterface;
 
+import com.zx.mytest.base.BaseView;
+
 /**
  * Created by Administrator on 2018/3/1 0001.
  */
 
-public interface MvpView {
+public interface MvpView extends BaseView{
     /**
      * 显示正在加载进度框
      */
