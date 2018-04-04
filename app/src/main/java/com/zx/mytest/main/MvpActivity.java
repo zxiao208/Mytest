@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import com.zx.mytest.R;
 import com.zx.mytest.base.BaseActivity;
-import com.zx.mytest.callback.MvpCallback;
 import com.zx.mytest.presenter.MvpPresenter;
 import com.zx.mytest.viewInterface.MvpView;
 

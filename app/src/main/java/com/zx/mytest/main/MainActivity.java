@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import com.zx.mytest.R;
 import com.zx.mytest.base.BaseActivity;
+import com.zx.mytest.util.ToastUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,7 +43,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.main_openprot:
-
+                ToastUtils.longShow(this,"‘›≤ªƒ‹”√");
                 break;
         }
 
