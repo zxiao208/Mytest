@@ -72,16 +72,28 @@ public class MvpActivity extends BaseActivity implements View.OnClickListener,Mv
 
     @Override
     public void showLoading() {
-        if(!progressDialog.isShowing()){
-            progressDialog.show();
+        runOnUiThread(new Runnable() {
+        @Override
+        public void run() {
+            if(!progressDialog.isShowing()){
+                progressDialog.show();
+            }
         }
+    });
+
     }
 
     @Override
     public void hideLoading() {
-        if (progressDialog.isShowing()) {
-            progressDialog.dismiss();
-        }
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (progressDialog.isShowing()) {
+                    progressDialog.dismiss();
+                }
+            }
+        });
+
     }
 
     @Override
@@ -100,14 +112,26 @@ public class MvpActivity extends BaseActivity implements View.OnClickListener,Mv
     }
 
     @Override
-    public void showData(String data) {
-        tv_content.setText(data);
+    public void showData(final String data) {
+     runOnUiThread(new Runnable() {
+         @Override
+         public void run() {
+             tv_content.setText(data);
+         }
+     });
+
     }
 
     @Override
-    public void showFailureMessage(String msg) {
+    public void showFailureMessage(final String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
-        tv_content.setText(msg);
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                tv_content.setText(msg);
+            }
+        });
+
     }
 
     @Override
