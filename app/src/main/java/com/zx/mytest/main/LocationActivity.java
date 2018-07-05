@@ -23,7 +23,7 @@ import com.zx.mytest.util.LocationUtil;
  * Created by Administrator on 2017/10/23 0023.
  */
 
-public class LocationActivity extends AppCompatActivity implements View.OnClickListener{
+public class LocationActivity extends AppCompatActivity implements View.OnClickListener {
     private boolean flag;
     private Button gsp_btn;
     private Button network_btn;

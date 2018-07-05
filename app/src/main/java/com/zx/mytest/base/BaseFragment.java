@@ -18,6 +18,7 @@ import butterknife.Unbinder;
 public abstract class BaseFragment extends Fragment implements BaseView {
 
     private Unbinder unbinder;
+
     /**
      * 获取布局ID
      */
@@ -29,6 +30,7 @@ public abstract class BaseFragment extends Fragment implements BaseView {
     protected abstract void init();
 
     protected abstract void initAllMembersView(Bundle savedInstanceState);
+
     protected Context mContext;
     protected View mRootView;
 
@@ -78,7 +80,7 @@ public abstract class BaseFragment extends Fragment implements BaseView {
 
     }
 
-    protected boolean isAttachedContext(){
+    protected boolean isAttachedContext() {
         return getActivity() != null;
     }
 
@@ -90,6 +92,7 @@ public abstract class BaseFragment extends Fragment implements BaseView {
             throw new ActivityNotAttachedException();
         }
     }
+
     public static class ActivityNotAttachedException extends RuntimeException {
         public ActivityNotAttachedException() {
             super("Fragment has disconnected from Activity ! - -.");

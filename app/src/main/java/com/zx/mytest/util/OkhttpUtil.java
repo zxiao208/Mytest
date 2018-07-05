@@ -18,11 +18,13 @@ import okhttp3.OkHttpClient;
 public class OkhttpUtil {
     private static OkHttpClient mOKHttpClient;
     //设置缓存目录
-    private static final File cacheDirectory = new File(MyApplication.getInstance().getCacheDir().getAbsolutePath(),"httpCache");
-    private static Cache cache = new Cache(cacheDirectory,10*1024*2014);
+    private static final File cacheDirectory = new File(MyApplication.getInstance().getCacheDir().getAbsolutePath(), "httpCache");
+    private static Cache cache = new Cache(cacheDirectory, 10 * 1024 * 2014);
     static OkHttpClient okHttpClient;
+
     /**
-     *  以builder的形式构建 okhttp,如果只是通过new的形式,创建不了拦截器
+     * 以builder的形式构建 okhttp,如果只是通过new的形式,创建不了拦截器
+     *
      * @return
      */
     public static OkHttpClient getOkhttpInstance() {

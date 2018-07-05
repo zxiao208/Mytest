@@ -19,19 +19,20 @@ import butterknife.BindView;
  * Created by Administrator on 2018/3/1 0001.
  */
 
-public class MvpActivity extends BaseActivity implements View.OnClickListener,MvpView{
+public class MvpActivity extends BaseActivity implements View.OnClickListener, MvpView {
 
     @BindView(R.id.mvpdemo_btn_getdata)
-     Button btn_getdata;
+    Button btn_getdata;
     @BindView(R.id.mvpdemo_btn_getdataff)
-     Button btn_getdataff;
+    Button btn_getdataff;
     @BindView(R.id.mvpdemo_btn_getdatafe)
-     Button btn_getdatafe;
+    Button btn_getdatafe;
     @BindView(R.id.mvpdemo_text)
-     TextView tv_content;
+    TextView tv_content;
 
     private ProgressDialog progressDialog;
     private MvpPresenter presenter;
+
     @Override
     protected int getContentViewLayoutID() {
         return R.layout.activity_mvpdemo;
@@ -55,7 +56,7 @@ public class MvpActivity extends BaseActivity implements View.OnClickListener,Mv
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.mvpdemo_btn_getdata:
                 presenter.getData("normal");
                 break;
@@ -73,13 +74,13 @@ public class MvpActivity extends BaseActivity implements View.OnClickListener,Mv
     @Override
     public void showLoading() {
         runOnUiThread(new Runnable() {
-        @Override
-        public void run() {
-            if(!progressDialog.isShowing()){
-                progressDialog.show();
+            @Override
+            public void run() {
+                if (!progressDialog.isShowing()) {
+                    progressDialog.show();
+                }
             }
-        }
-    });
+        });
 
     }
 
@@ -113,12 +114,12 @@ public class MvpActivity extends BaseActivity implements View.OnClickListener,Mv
 
     @Override
     public void showData(final String data) {
-     runOnUiThread(new Runnable() {
-         @Override
-         public void run() {
-             tv_content.setText(data);
-         }
-     });
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                tv_content.setText(data);
+            }
+        });
 
     }
 

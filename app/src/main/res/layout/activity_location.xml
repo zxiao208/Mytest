@@ -8,32 +8,31 @@
         android:id="@+id/gps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="gps获取定位"
-        />
+        android:text="gps获取定位" />
+
     <Button
         android:id="@+id/net"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="network获取定位"
-        />
+        android:text="network获取定位" />
+
     <Button
         android:id="@+id/best"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="混合定位"
-        />
+        android:text="混合定位" />
+
     <TextView
         android:id="@+id/henzuobiao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:text="横坐标"
-    />
+        android:text="横坐标" />
+
     <TextView
         android:id="@+id/zongzuobiao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:text="纵坐标"
-        />
+        android:text="纵坐标" />
 </LinearLayout>

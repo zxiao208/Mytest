@@ -4,4 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="blue">#2F98E9</color>
+    <color name="toolbar_color">#A60E01</color>
+    <color name="mywhite">#FFFFFF</color>
+    <color name="myred">#FF0000</color>
+    <color name="black">#000000</color>
+    <color name="redssss">#EE3B3B</color>
+    <color name="ssdfs">#000000</color>
 </resources>

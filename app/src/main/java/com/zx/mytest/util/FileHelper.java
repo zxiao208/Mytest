@@ -70,7 +70,6 @@ public class FileHelper {
 
     /**
      * 追加文件：使用FileOutputStream，在构造FileOutputStream时，把第二个参数设为true
-     *
      */
     public static void method1(String file, String conent) {
         BufferedWriter out = null;
@@ -109,10 +108,8 @@ public class FileHelper {
     /**
      * 追加文件：使用RandomAccessFile
      *
-     * @param fileName
-     *            文件名
-     * @param content
-     *            追加的内容
+     * @param fileName 文件名
+     * @param content  追加的内容
      */
     public static void method3(String fileName, String content) {
         try {
@@ -128,6 +125,7 @@ public class FileHelper {
             e.printStackTrace();
         }
     }
+
     public synchronized static void writeFileToSDCard(@NonNull final byte[] buffer, @Nullable final String folder,
                                                       @Nullable final String fileName, final boolean append, final boolean autoLine) {
         new Thread(new Runnable() {
@@ -171,7 +169,7 @@ public class FileHelper {
                         raf = new RandomAccessFile(file, "rw");
                         raf.seek(file.length());
                         raf.write(buffer);
-                        Log.i("zhaoxiao","写入成功");
+                        Log.i("zhaoxiao", "写入成功");
                         if (autoLine) {
                             raf.write("\n".getBytes());
                         }
@@ -199,15 +197,15 @@ public class FileHelper {
         }).start();
     }
 
-    public static final String FILE_NAME="myFile.txt";
+    public static final String FILE_NAME = "myFile.txt";
+
     //往SD卡写入文件的方法
-    public static void  savaFileToSD(String filename, String filecontent,Context context) throws Exception {
+    public static void savaFileToSD(String filename, String filecontent, Context context) throws Exception {
         //如果手机已插入sd卡,且app具有读写sd卡的权限
 
-        File file=new File(filename);
+        File file = new File(filename);
         //文件是否存在
-        if(!file.exists())
-        {
+        if (!file.exists()) {
             try {
                 //文件不存在，就创建一个新文件
                 file.createNewFile();
@@ -215,21 +213,18 @@ public class FileHelper {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        else
-        {
-            Log.i("ZHAOXIAO","文件已经存在");
-            Log.i("ZHAOXIAO","文件名："+file.getName());
-            Log.i("ZHAOXIAO","文件绝对路径为："+file.getAbsolutePath());
+        } else {
+            Log.i("ZHAOXIAO", "文件已经存在");
+            Log.i("ZHAOXIAO", "文件名：" + file.getName());
+            Log.i("ZHAOXIAO", "文件绝对路径为：" + file.getAbsolutePath());
             //是存在工程目录下，所以
-            Log.i("ZHAOXIAO","文件相对路径为："+file.getPath());
+            Log.i("ZHAOXIAO", "文件相对路径为：" + file.getPath());
 
-            Log.i("ZHAOXIAO","文件大小为："+file.length()+"字节");
-            Log.i("ZHAOXIAO","文件是否可读："+file.canRead());
-            Log.i("ZHAOXIAO","文件是否可写："+file.canWrite());
-            Log.i("ZHAOXIAO","我呢间是否隐藏："+file.isHidden());
+            Log.i("ZHAOXIAO", "文件大小为：" + file.length() + "字节");
+            Log.i("ZHAOXIAO", "文件是否可读：" + file.canRead());
+            Log.i("ZHAOXIAO", "文件是否可写：" + file.canWrite());
+            Log.i("ZHAOXIAO", "我呢间是否隐藏：" + file.isHidden());
         }
-
 
 
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
@@ -250,7 +245,7 @@ public class FileHelper {
                 e.printStackTrace();
             } finally {
                 try {
-                    if(writer != null){
+                    if (writer != null) {
                         writer.close();
                     }
                 } catch (IOException e) {

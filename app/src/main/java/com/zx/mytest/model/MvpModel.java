@@ -31,17 +31,18 @@ import static android.content.ContentValues.TAG;
 public class MvpModel {
     /**
      * 获取网络接口数据
-     * @param param 请求参数
+     *
+     * @param param    请求参数
      * @param callback 数据回调接口
      */
-    public static void getNetData(final String param, final MvpCallback callback){
+    public static void getNetData(final String param, final MvpCallback callback) {
         // 利用postDelayed方法模拟网络请求数据的耗时操作
-        new Thread(new Runnable(){
+        new Thread(new Runnable() {
             @Override
             public void run() {
-                switch (param){
+                switch (param) {
                     case "normal":
-                        String url = "https://www.easy-mock.com/mock/5ac4681e3c79552ff7a14b58/example/zhaoxiao";
+                        String url = "http://192.168.7.190:8080/SSM-Xml/test/login.do";
                         OkHttpClient okhttpClient = new OkHttpClient();
                         Request request = new Request.Builder().get().url(url).build();
                         okhttp3.Call call = okhttpClient.newCall(request);
@@ -50,13 +51,13 @@ public class MvpModel {
                             public void onFailure(Call call, IOException e) {
 
                             }
+
                             @Override
                             public void onResponse(Call call, Response response) throws IOException {
                                 String result = response.body().string();
-                                 Log.e("result 网络请求结果是 :::", "onResponse: " + result);
+                                Log.e("result 网络请求结果是 :::", "onResponse: " + result);
                                 Gson gson = new Gson();
                                 callback.onSuccess(result);
-                                callback.onComplete();
                             }
                         });
                         break;
@@ -67,11 +68,11 @@ public class MvpModel {
                         callback.onError();
                         break;
                 }
-
+                callback.onComplete();
             }
+
         }).start();
     }
-
 
 
     private static void getJson(final MvpCallback callback) throws IOException {

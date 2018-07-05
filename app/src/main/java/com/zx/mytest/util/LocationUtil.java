@@ -131,7 +131,7 @@ public class LocationUtil {
                 && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-     //   Log.i("zhaoxiao","1111");
+        //   Log.i("zhaoxiao","1111");
         manager.requestLocationUpdates(provider, time, meter, listener);
     }
 
@@ -143,7 +143,7 @@ public class LocationUtil {
             LocationManager manager = getLocationManager(context);
             if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                     && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                Log.i("zhaoxiao","11111111111111111111111111111111111");
+                Log.i("zhaoxiao", "11111111111111111111111111111111111");
                 return;
             }
             //移除定位监听
