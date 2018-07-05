@@ -47,6 +47,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <!--okhttp demo-->
+        <activity android:name=".main.OkhttpDemoActivity">
+            <intent-filter>
+                <action android:name=".main.okhttpaction" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

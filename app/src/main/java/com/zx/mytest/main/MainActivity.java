@@ -21,6 +21,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     Button mainOpenprot;
     @BindView(R.id.main_btn_recyclerview)
     Button mainBtnRecyclerview;
+    @BindView(R.id.main_btn_okhttp)
+    Button mainBtnOkhttp;
 
 
     @Override
@@ -37,7 +39,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         btnMVP.setOnClickListener(this);
         mainOpenprot.setOnClickListener(this);
         mainBtnRecyclerview.setOnClickListener(this);
-
+        mainBtnOkhttp.setOnClickListener(this);
     }
 
     @Override
@@ -50,8 +52,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.main_openprot:
                 break;
             case R.id.main_btn_recyclerview:
-                Intent intent1 = new Intent(getApplicationContext(),RecyclerViewActivity.class);
+                Intent intent1 = new Intent(getApplicationContext(), RecyclerViewActivity.class);
                 startActivity(intent1);
+                break;
+            case R.id.main_btn_okhttp:
+                Intent intent2 = new Intent(getApplicationContext(), OkhttpDemoActivity.class);
+                startActivity(intent2);
                 break;
             default:
                 break;
