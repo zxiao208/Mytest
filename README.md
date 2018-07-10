@@ -1,2 +1,4 @@
 # Mytest
-练习项目
+1.RecyclerView
+2.Okhttp3
+3.MVP
