@@ -29,7 +29,7 @@ public class OkhttpUtil {
      */
     public static OkHttpClient getOkhttpInstance() {
         if (okHttpClient == null) {
-            synchronized (OkhttpUtil.class) {   // 双重加锁机制,后面也要对空判断,假设两个线程都到这里,不判断,下一个线程还是会再创建
+            synchronized (OkhttpUtil.class) {// 双重加锁机制,后面也要对空判断,假设两个线程都到这里,不判断,下一个线程还是会再创建
                 if (okHttpClient == null) {
                     okHttpClient = new OkHttpClient();
 //                    okHttpClient = new OkHttpClient.Builder();
