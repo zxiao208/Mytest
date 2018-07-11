@@ -62,14 +62,21 @@ public class CustomViewActivity extends BaseActivity implements View.OnClickList
         }
     }
 
-    public static class SimpleCalendarDialogFragment extends AppCompatDialogFragment implements CalendarView.OnDateChangeListener{
+    public static class SimpleCalendarDialogFragment extends AppCompatDialogFragment{
         CalendarView calendarView;
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             LayoutInflater inflater = getActivity().getLayoutInflater();
             View view = inflater.inflate(R.layout.fragment_custom,null);
             calendarView = view.findViewById(R.id.fg_calendar);
-            calendarView.setOnDateChangeListener(this);
+            calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+                @Override
+                public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+//                    Toast.makeText(getActivity(), FORMATTER.format(view.getDate()), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), year+"-"+month+"-"+dayOfMonth, Toast.LENGTH_SHORT).show();
+                }
+            });
+
             return new AlertDialog.Builder(getActivity())
                     .setView(view)
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
@@ -80,9 +87,5 @@ public class CustomViewActivity extends BaseActivity implements View.OnClickList
                     }).create();
         }
 
-        @Override
-        public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-            Toast.makeText(getActivity(), FORMATTER.format(view.getDate()), Toast.LENGTH_SHORT).show();
-        }
     }
 }

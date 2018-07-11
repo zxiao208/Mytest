@@ -8,13 +8,11 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.zx.mytest.R;
 import com.zx.mytest.base.BaseActivity;
-import com.zx.mytest.service.PermissionService;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,8 +31,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     Button mainBtnRecyclerview;
     @BindView(R.id.main_btn_okhttp)
     Button mainBtnOkhttp;
-    @BindView(R.id.main_btn_startService)
+    @BindView(R.id.main_btn_startservice)
     Button mainBtnStartService;
+    @BindView(R.id.main_btn_customview)
+    Button mainBtnCustomview;
 
 
     @Override
@@ -54,6 +54,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mainBtnRecyclerview.setOnClickListener(this);
         mainBtnOkhttp.setOnClickListener(this);
         mainBtnStartService.setOnClickListener(this);
+        mainBtnCustomview.setOnClickListener(this);
     }
 
     @Override
@@ -65,7 +66,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                     //  installapk  申请成功执行安装操作
                 } else {
                     Uri packageURI = Uri.parse("package:" + getPackageName());
-                    Intent intent = new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES,packageURI);
+                    Intent intent = new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, packageURI);
                     startActivityForResult(intent, 100);
                 }
                 break;
@@ -90,8 +91,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 Intent intent2 = new Intent(getApplicationContext(), OkhttpDemoActivity.class);
                 startActivity(intent2);
                 break;
-            case R.id.main_btn_startService:
-                ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.REQUEST_INSTALL_PACKAGES},INSTALL_PACKAGES_REQUESTCODE);
+            case R.id.main_btn_startservice:
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.REQUEST_INSTALL_PACKAGES}, INSTALL_PACKAGES_REQUESTCODE);
+                break;
+            case R.id.main_btn_customview:
+                Intent intent3 = new Intent(getApplicationContext(), CustomViewActivity.class);
+                startActivity(intent3);
                 break;
             default:
                 break;
